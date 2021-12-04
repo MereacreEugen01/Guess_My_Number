@@ -144,34 +144,35 @@
 
     <TextView
         android:id="@+id/GuessView"
-        android:layout_width="359dp"
-        android:layout_height="71dp"
-        android:layout_marginBottom="10dp"
-        android:text=""
+        android:layout_width="385dp"
+        android:layout_height="45dp"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/Two_Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/TryView"
-        android:layout_width="51dp"
-        android:layout_height="21dp"
+        android:layout_width="49dp"
+        android:layout_height="36dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="32dp"
         android:text="Tries:"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/GuessView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/TimeView"
-        android:layout_width="48dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="70dp"
+        android:layout_width="53dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="67dp"
         android:text="Time:"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/GuessView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -180,8 +181,9 @@
         android:id="@+id/TriesCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/GuessView"
         app:layout_constraintStart_toEndOf="@+id/TryView"
         app:layout_constraintTop_toTopOf="parent" />
@@ -190,11 +192,33 @@
         android:id="@+id/TimeCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="10dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="8dp"
+        android:text="00:00:00"
+        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/GuessView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/TimeView"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/MessageView"
+        android:layout_width="140dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginBottom="32dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/GuessView"
+        app:layout_constraintEnd_toStartOf="@+id/TimeView"
+        app:layout_constraintStart_toEndOf="@+id/TriesCounter"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="67dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

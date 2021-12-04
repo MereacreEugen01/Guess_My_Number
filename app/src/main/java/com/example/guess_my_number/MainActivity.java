@@ -13,10 +13,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void onClickGame(View arg0) {
+    public void onClickEasy(View arg0) {
         // definisco l'intenzione
         Intent game = new Intent(MainActivity.this,Game_Activity.class);
         // passo all'attivazione dell'activity Game_Activity.java
+        java.util.Random generator = new java.util.Random();
+        int number = generator.nextInt(101);
+        game.putExtra("number", number);
+        startActivity(game);
+    }
+
+    public void onClickNormal(View arg0) {
+        // definisco l'intenzione
+        Intent game = new Intent(MainActivity.this,Game_Activity.class);
+        // passo all'attivazione dell'activity Game_Activity.java
+        java.util.Random generator = new java.util.Random();
+        int number = generator.nextInt(1001);
+        game.putExtra("number", number);
+        startActivity(game);
+    }
+
+    public void onClickHard(View arg0) {
+        // definisco l'intenzione
+        Intent game = new Intent(MainActivity.this,Game_Activity.class);
+        // passo all'attivazione dell'activity Game_Activity.java
+        java.util.Random generator = new java.util.Random();
+        int number = generator.nextInt(10001);
+        game.putExtra("number", number);
         startActivity(game);
     }
 
