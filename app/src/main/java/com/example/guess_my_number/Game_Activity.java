@@ -34,35 +34,36 @@ public class Game_Activity extends AppCompatActivity {
     public void onClickGuess(View arg0){
         //Controllo numero
         if(this.rifGuessView.getText().length()<1){
-            this.rifMessageView.setText("Nothing");
+            this.rifGuessView.setText("Nothing");
         }else {
             if(Integer.parseInt(this.rifGuessView.getText().toString()) == n) {
-                if(this.rifMessageView.getText().equals("Guessed")){
+                if(this.rifGuessView.getText().equals("Guessed")){
 
                 }else{
                 counter++;
                 this.rifTriesCounter.setText("" + counter);
                 finalCounter = counter;
-                this.rifMessageView.setText("Guessed");
+                this.rifGuessView.setText("Guessed");
             }} else if(n > Integer.parseInt(this.rifGuessView.getText().toString())){
-                this.rifMessageView.setText("Higher");
+                this.rifGuessView.setText("Higher");
                 counter++;
-                this.rifGuessView.setText("");
+                //this.rifGuessView.setText("");
                 this.rifTriesCounter.setText("" + counter);
             } else {
-                this.rifMessageView.setText("Lower");
+                this.rifGuessView.setText("Lower");
                 counter++;
-                this.rifGuessView.setText("");
+               // this.rifGuessView.setText("");
                 this.rifTriesCounter.setText("" + counter);
             }
         }
     }
 
     public void onClick1(View arg0){
-        if(this.rifMessageView.getText().equals("Guessed")){
-
-        }else
-        this.rifGuessView.append("1");
+        try{
+            rifGuessView.append("1");
+        }catch(Exception e){
+            rifGuessView.setText("1");
+        }
     }
 
     public void onClick2(View arg0){
@@ -126,5 +127,12 @@ public class Game_Activity extends AppCompatActivity {
 
         }else
         this.rifGuessView.append("0");
+    }
+    public void onClickDelete(View arg0){
+        if(this.rifMessageView.getText().equals("Guessed")){
+
+        }else {
+            this.rifGuessView.getText().toString().substring(0, rifGuessView.getText().toString().length()-1);
+        }
     }
 }

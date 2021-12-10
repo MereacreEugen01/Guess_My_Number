@@ -11,7 +11,7 @@
         android:id="@+id/Guess_It_Button"
         android:layout_width="259dp"
         android:layout_height="71dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="10dp"
         android:onClick="onClickGuess"
         android:text="@string/etichetta_guess_it"
         android:textSize="30sp"
@@ -21,8 +21,8 @@
 
     <Button
         android:id="@+id/Four_Button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="15dp"
         android:onClick="onClick4"
@@ -33,8 +33,8 @@
 
     <Button
         android:id="@+id/One_Button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="15dp"
         android:onClick="onClick1"
@@ -45,10 +45,10 @@
 
     <Button
         android:id="@+id/Seven_Button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="220dp"
         android:onClick="onClick7"
         android:text="7"
         android:textSize="30sp"
@@ -57,8 +57,8 @@
 
     <Button
         android:id="@+id/Eight_Button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginBottom="139dp"
         android:onClick="onClick8"
         android:text="8"
@@ -70,8 +70,8 @@
 
     <Button
         android:id="@+id/Zero_Button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginBottom="12dp"
         android:onClick="onClick0"
         android:text="0"
@@ -83,8 +83,8 @@
 
     <Button
         android:id="@+id/Five_Button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginBottom="15dp"
         android:onClick="onClick5"
         android:text="5"
@@ -95,8 +95,8 @@
 
     <Button
         android:id="@+id/Two_Button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginBottom="15dp"
         android:onClick="onClick2"
         android:text="2"
@@ -108,10 +108,10 @@
 
     <Button
         android:id="@+id/Nine_Button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="220dp"
         android:onClick="onClick9"
         android:text="9"
         android:textSize="30sp"
@@ -119,9 +119,23 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
+        android:id="@+id/nine_Button"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="28dp"
+        android:onClick="onClickDelete"
+        android:text="⌫"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Nine_Button"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <Button
         android:id="@+id/Six_Button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="15dp"
         android:onClick="onClick6"
@@ -132,8 +146,8 @@
 
     <Button
         android:id="@+id/Three_Button"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="15dp"
         android:onClick="onClick3"
@@ -155,8 +169,8 @@
 
     <TextView
         android:id="@+id/TryView"
-        android:layout_width="49dp"
-        android:layout_height="36dp"
+        android:layout_width="69dp"
+        android:layout_height="29dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="32dp"
         android:text="Tries:"
@@ -170,12 +184,13 @@
         android:layout_width="53dp"
         android:layout_height="26dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="67dp"
+        android:layout_marginEnd="76dp"
         android:text="Time:"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/GuessView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.504" />
 
     <TextView
         android:id="@+id/TriesCounter"
@@ -206,13 +221,15 @@
         android:layout_width="140dp"
         android:layout_height="36dp"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/GuessView"
         app:layout_constraintEnd_toStartOf="@+id/TimeView"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/TriesCounter"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.798" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

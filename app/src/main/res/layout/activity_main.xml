@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/sfondo"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/Titolo"
         android:layout_width="198dp"
         android:layout_height="118dp"
+        android:background="#FFFFFF"
         android:fontFamily="casual"
         android:text="Guess My Number"
         android:textAlignment="center"
