@@ -14,7 +14,7 @@ public class Game_Activity extends AppCompatActivity {
 
     private TextView rifTriesCounter;
     private TextView rifGuessView;
-    private TextView rifMessageView;
+   // private TextView rifMessageView;
     private int n;
 
     @Override
@@ -23,7 +23,6 @@ public class Game_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         this.rifTriesCounter = (TextView) this.findViewById(R.id.TriesCounter);
         this.rifGuessView = (TextView) this.findViewById(R.id.GuessView);
-        this.rifMessageView = (TextView) this.findViewById(R.id.MessageView);
         Bundle number = getIntent().getExtras();
         if(number != null){
             n = number.getInt("number");
@@ -35,7 +34,12 @@ public class Game_Activity extends AppCompatActivity {
         //Controllo numero
         if(this.rifGuessView.getText().length()<1){
             this.rifGuessView.setText("Nothing");
-        }else {
+        }
+        else if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower")|
+                rifGuessView.getText().toString().contains("Guessed"))
+        { }else {
             if(Integer.parseInt(this.rifGuessView.getText().toString()) == n) {
                 if(this.rifGuessView.getText().equals("Guessed")){
 
@@ -58,81 +62,175 @@ public class Game_Activity extends AppCompatActivity {
         }
     }
 
+    public void onClick0(View arg0){
+        if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower") )
+        {
+            rifGuessView.setText("");
+            this.rifGuessView.append("0");
+        }
+        else if(rifGuessView.getText().toString().contains("Guessed")){
+
+        }
+        else {
+            this.rifGuessView.append("0");
+        }
+    }
+
     public void onClick1(View arg0){
-        try{
-            rifGuessView.append("1");
-        }catch(Exception e){
-            rifGuessView.setText("1");
+        if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower") )
+        {
+            rifGuessView.setText("");
+            this.rifGuessView.append("1");
+        }
+        else if(rifGuessView.getText().toString().contains("Guessed")){
+
+        }
+        else {
+            this.rifGuessView.append("1");
         }
     }
 
     public void onClick2(View arg0){
-        if(this.rifMessageView.getText().equals("Guessed")){
+        if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower") )
+        {
+            rifGuessView.setText("");
+            this.rifGuessView.append("2");
+        }
+        else if(rifGuessView.getText().toString().contains("Guessed")){
 
-        }else
-        this.rifGuessView.append("2");
+        }
+        else {
+            this.rifGuessView.append("2");
+        }
     }
 
     public void onClick3(View arg0){
-        if(this.rifMessageView.getText().equals("Guessed")){
+        if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower") )
+        {
+            rifGuessView.setText("");
+            this.rifGuessView.append("3");
+        }
+        else if(rifGuessView.getText().toString().contains("Guessed")){
 
-        }else
-        this.rifGuessView.append("3");
+        }
+        else {
+            this.rifGuessView.append("3");
+        }
     }
 
     public void onClick4(View arg0){
-        if(this.rifMessageView.getText().equals("Guessed")){
+        if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower") )
+        {
+            rifGuessView.setText("");
+            this.rifGuessView.append("4");
+        }
+        else if(rifGuessView.getText().toString().contains("Guessed")){
 
-        }else
-        this.rifGuessView.append("4");
+        }
+        else {
+            this.rifGuessView.append("4");
+        }
     }
 
     public void onClick5(View arg0){
-        if(this.rifMessageView.getText().equals("Guessed")){
+        if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower") )
+        {
+            rifGuessView.setText("");
+            this.rifGuessView.append("5");
+        }
+        else if(rifGuessView.getText().toString().contains("Guessed")){
 
-        }else
-        this.rifGuessView.append("5");
+        }
+        else {
+            this.rifGuessView.append("5");
+        }
     }
 
     public void onClick6(View arg0){
-        if(this.rifMessageView.getText().equals("Guessed")){
+        if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower") )
+        {
+            rifGuessView.setText("");
+            this.rifGuessView.append("6");
+        }
+        else if(rifGuessView.getText().toString().contains("Guessed")){
 
-        }else
-        this.rifGuessView.append("6");
+        }
+        else {
+            this.rifGuessView.append("6");
+        }
     }
 
     public void onClick7(View arg0){
-        if(this.rifMessageView.getText().equals("Guessed")){
+        if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower") )
+        {
+            rifGuessView.setText("");
+            this.rifGuessView.append("7");
+        }else if(rifGuessView.getText().toString().contains("Guessed")){
 
-        }else
-        this.rifGuessView.append("7");
+        }
+        else {
+            this.rifGuessView.append("7");
+        }
+
     }
 
     public void onClick8(View arg0){
-        if(this.rifMessageView.getText().equals("Guessed")){
+        if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower") )
+        {
+            rifGuessView.setText("");
+            this.rifGuessView.append("8");
+        }
+        else if(rifGuessView.getText().toString().contains("Guessed")){
 
-        }else
-        this.rifGuessView.append("8");
+        }
+        else {
+            this.rifGuessView.append("8");
+        }
     }
 
     public void onClick9(View arg0){
-        if(this.rifMessageView.getText().equals("Guessed")){
+        if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower") )
+        {
+            rifGuessView.setText("");
+            this.rifGuessView.append("9");
+        }
+        else if(rifGuessView.getText().toString().contains("Guessed")){
 
-        }else
-        this.rifGuessView.append("9");
+        }
+        else {
+            this.rifGuessView.append("9");
+        }
     }
 
-    public void onClick0(View arg0){
-        if(this.rifMessageView.getText().equals("Guessed")){
-
-        }else
-        this.rifGuessView.append("0");
-    }
     public void onClickDelete(View arg0){
-        if(this.rifMessageView.getText().equals("Guessed")){
-
+        if(rifGuessView.getText().toString().contains("Nothing") |
+                rifGuessView.getText().toString().contains("Higher") |
+                rifGuessView.getText().toString().contains("Lower") |
+                rifGuessView.getText().toString().contains("Guessed")){
         }else {
-            this.rifGuessView.getText().toString().substring(0, rifGuessView.getText().toString().length()-1);
+            rifGuessView.setText(rifGuessView.getText().toString().substring(0, rifGuessView.getText().toString().length()-1));
+           // System.out.println("good: " + rifGuessView.getText().toString());
+            //rifGuessView.setText("");
         }
     }
 }
