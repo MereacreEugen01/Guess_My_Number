@@ -172,7 +172,8 @@
     <TextView
         android:id="@+id/GuessView"
         android:layout_width="385dp"
-        android:layout_height="45dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="12dp"
         android:background="#FFFFFF"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
@@ -207,36 +208,32 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/TimeCounter"
-        android:layout_width="83dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="16dp"
-        android:background="#FFFFFF"
-        android:text="00:00:00"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/TimeView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/TimeView" />
-
-    <TextView
         android:id="@+id/TimeView"
-        android:layout_width="55dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="118dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="70dp"
+        android:accessibilityHeading="false"
         android:background="#FFFFFF"
         android:text="Time:"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/GuessView"
-        app:layout_constraintEnd_toStartOf="@+id/TimeCounter"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintBottom_toBottomOf="@+id/chronometer"
         app:layout_constraintStart_toEndOf="@+id/TryView"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/chronometer" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="67dp" />
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="83dp"
+        android:layout_height="41dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:background="#00000000"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/GuessView"
+        app:layout_constraintEnd_toEndOf="@+id/TimeView"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

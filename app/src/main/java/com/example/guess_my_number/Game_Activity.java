@@ -6,6 +6,9 @@ import android.os.Bundle;
 import java.util.Random;
 import android.view.View;
 import android.widget.TextView;
+import android.os.SystemClock;
+import android.widget.Chronometer;
+
 
 public class Game_Activity extends AppCompatActivity {
 
@@ -16,6 +19,7 @@ public class Game_Activity extends AppCompatActivity {
     private TextView rifGuessView;
    // private TextView rifMessageView;
     private int n;
+    private Chronometer gameTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,8 @@ public class Game_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         this.rifTriesCounter = (TextView) this.findViewById(R.id.TriesCounter);
         this.rifGuessView = (TextView) this.findViewById(R.id.GuessView);
+        gameTime = (Chronometer) this.findViewById(R.id.chronometer);
+        gameTime.start();
         Bundle number = getIntent().getExtras();
         if(number != null){
             n = number.getInt("number");
@@ -37,10 +43,12 @@ public class Game_Activity extends AppCompatActivity {
         }
         else if(rifGuessView.getText().toString().contains("Nothing") |
                 rifGuessView.getText().toString().contains("Higher") |
-                rifGuessView.getText().toString().contains("Lower")|
+                rifGuessView.getText().toString().contains("Lower") |
                 rifGuessView.getText().toString().contains("Guessed"))
         { }else {
             if(Integer.parseInt(this.rifGuessView.getText().toString()) == n) {
+                gameTime.stop();
+               // gameTime.
                 if(this.rifGuessView.getText().equals("Guessed")){
 
                 }else{

@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/sfondo"
     tools:context=".Score_Activity">
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="311dp"
-        android:layout_height="44dp"
+        android:layout_width="213dp"
+        android:layout_height="51dp"
         android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
         android:text="Top 5 players"
         android:textAlignment="center"
         android:textColor="#2196F3"
@@ -22,32 +24,35 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/easyScoreButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
-        android:text="Button"
+        android:backgroundTint="#89FC00"
+        android:text="Easy 😇"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/normalScoreButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        android:backgroundTint="#005377"
+        android:text="Normal 😐"
+        app:layout_constraintEnd_toStartOf="@+id/hardScoreButton"
+        app:layout_constraintStart_toEndOf="@+id/easyScoreButton"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/hardScoreButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:text="Button"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#E3170A"
+        android:text="Hard 🤬"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -55,12 +60,14 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="25dp"
         android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
         android:text="Position"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/normalScoreButton"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -69,10 +76,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
         android:text="Player"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/normalScoreButton"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -82,12 +91,14 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
+        android:background="#FFFFFF"
         android:text="Tries"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/normalScoreButton"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -95,11 +106,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginEnd="25dp"
+        android:background="#FFFFFF"
         android:text="Time"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/normalScoreButton"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
