@@ -2,8 +2,13 @@ package com.example.guess_my_number;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+
+import java.util.ArrayList;
 import java.util.Random;
+
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 import android.os.SystemClock;
@@ -13,6 +18,7 @@ import android.widget.Chronometer;
 public class Game_Activity extends AppCompatActivity {
 
     private int counter = 0;
+    private String m;
     private int finalCounter;
 
     private TextView rifTriesCounter;
@@ -32,6 +38,7 @@ public class Game_Activity extends AppCompatActivity {
         Bundle number = getIntent().getExtras();
         if(number != null){
             n = number.getInt("number");
+            m = number.getString("mode");
         }
 
     }
@@ -48,7 +55,19 @@ public class Game_Activity extends AppCompatActivity {
         { }else {
             if(Integer.parseInt(this.rifGuessView.getText().toString()) == n) {
                 gameTime.stop();
-               // gameTime.
+                if(isNewScore(MainActivity.allscores, finalCounter,gameTime.getBase(), m)){
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent i = new Intent(Game_Activity.this, Credentials_Activity.class);
+                            i.putExtra("mode", m);
+                            i.putExtra("tries", finalCounter);
+                            i.putExtra("time", gameTime.getBase());
+                            startActivity(i);
+                            finish();
+                        }
+                    }, 1500);
+                // gameTime.
                 if(this.rifGuessView.getText().equals("Guessed")){
 
                 }else{
@@ -56,6 +75,8 @@ public class Game_Activity extends AppCompatActivity {
                 this.rifTriesCounter.setText("" + counter);
                 finalCounter = counter;
                 this.rifGuessView.setText("Guessed");
+
+                }
             }} else if(n > Integer.parseInt(this.rifGuessView.getText().toString())){
                 this.rifGuessView.setText("Higher");
                 counter++;
@@ -240,5 +261,21 @@ public class Game_Activity extends AppCompatActivity {
            // System.out.println("good: " + rifGuessView.getText().toString());
             //rifGuessView.setText("");
         }
+    }
+    public boolean isNewScore(ArrayList<String> scores, int tentativi, double tempo, String mode){
+        if(scores.isEmpty()) return true;
+        boolean check = false;
+        ArrayList<String> top = new ArrayList<>();
+        for(String s : scores)
+            if(s.split(",")[0].equals(mode))
+                top.add(s);
+        if(top.isEmpty() || top.size() < 3) check = true;
+        else{
+            for(String s : top)
+                if(tentativi <= Integer.parseInt(s.split(",")[2]))
+                    if(tempo < Double.parseDouble(s.split(",")[3]))
+                        check = true;
+        }
+        return check;
     }
 }
