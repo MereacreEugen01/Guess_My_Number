@@ -26,6 +26,7 @@ public class Game_Activity extends AppCompatActivity {
    // private TextView rifMessageView;
     private int n;
     private Chronometer gameTime;
+    private long t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,12 @@ public class Game_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
         this.rifTriesCounter = (TextView) this.findViewById(R.id.TriesCounter);
         this.rifGuessView = (TextView) this.findViewById(R.id.GuessView);
+
         gameTime = (Chronometer) this.findViewById(R.id.chronometer);
+
+        gameTime.setBase(SystemClock.elapsedRealtime());
         gameTime.start();
+
         Bundle number = getIntent().getExtras();
         if(number != null){
             n = number.getInt("number");
@@ -55,14 +60,17 @@ public class Game_Activity extends AppCompatActivity {
         { }else {
             if(Integer.parseInt(this.rifGuessView.getText().toString()) == n) {
                 gameTime.stop();
-                if(isNewScore(MainActivity.allscores, finalCounter,gameTime.getBase(), m)){
+                t = SystemClock.elapsedRealtime()-gameTime.getBase();
+                t = t/1000;
+                if(isNewScore(MainActivity.allscores, finalCounter, t, m)){
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             Intent i = new Intent(Game_Activity.this, Credentials_Activity.class);
                             i.putExtra("mode", m);
                             i.putExtra("tries", finalCounter);
-                            i.putExtra("time", gameTime.getBase());
+                            i.putExtra("time", t);
+                            //invece di getBase metti  long time = SystemClock.elapsedRealtime()-gameTime.getBase();
                             startActivity(i);
                             finish();
                         }
@@ -262,7 +270,7 @@ public class Game_Activity extends AppCompatActivity {
             //rifGuessView.setText("");
         }
     }
-    public boolean isNewScore(ArrayList<String> scores, int tentativi, double tempo, String mode){
+    public boolean isNewScore(ArrayList<String> scores, int tentativi, long tempo, String mode){
         if(scores.isEmpty()) return true;
         boolean check = false;
         ArrayList<String> top = new ArrayList<>();

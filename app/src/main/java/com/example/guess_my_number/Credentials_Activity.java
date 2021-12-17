@@ -11,16 +11,22 @@ import java.util.ArrayList;
 
 public class Credentials_Activity extends AppCompatActivity {
 
+    private TextView rifRecap;
+    Bundle b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credentials);
+        this.b = getIntent().getExtras();
+        this.rifRecap = (TextView) this.findViewById(R.id.recap);
+        this.rifRecap.setText("Mode:"+b.getString("mode")+" , Tries:"+b.getInt("tries")+" , Time(s):"+b.getLong("time"));
+
     }
 
     public void onClickSave(View arg0){
         String nome = ((TextView)(findViewById(R.id.Name))).getText().toString();
-        Bundle b = getIntent().getExtras();
-        String score = b.getString("mode") + "," + nome + "," + b.getInt("tries") + "," + b.getDouble("time");
+
+        String score = b.getString("mode") + "," + nome + "," + b.getInt("tries") + "," + b.getLong("time");
         int pos = getPosition(MainActivity.allscores, score);
         String newScore = score+","+pos;
         MainActivity.allscores.add(newScore);
