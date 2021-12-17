@@ -12,32 +12,37 @@ import java.util.ArrayList;
 public class Credentials_Activity extends AppCompatActivity {
 
     private TextView rifRecap;
+    private TextView rifName;
     Bundle b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_credentials);
         this.b = getIntent().getExtras();
+        this.rifName = (TextView) this.findViewById(R.id.Name);
         this.rifRecap = (TextView) this.findViewById(R.id.recap);
         this.rifRecap.setText("Mode:"+b.getString("mode")+" , Tries:"+b.getInt("tries")+" , Time(s):"+b.getLong("time"));
 
     }
 
-    public void onClickSave(View arg0){
-        String nome = ((TextView)(findViewById(R.id.Name))).getText().toString();
+    public void onClickSave(View arg0) {
+        String nome = rifName.getText().toString();
+        if (nome.equals("")) {
+            rifName.setText("Player");
+            nome = rifName.getText().toString();
+        }
+            String score = b.getString("mode") + "," + nome + "," + b.getInt("tries") + "," + b.getLong("time");
+            int pos = getPosition(MainActivity.allscores, score);
+            String newScore = score + "," + pos;
+            MainActivity.allscores.add(newScore);
+            SharedPreferences.Editor editor = getSharedPreferences("scores", MODE_PRIVATE).edit();
+            editor.clear();
+            editor.commit();
+            for (String s : MainActivity.allscores)
+                editor.putString("top" + pos + b.getString("mode"), newScore);
+            finish();
 
-        String score = b.getString("mode") + "," + nome + "," + b.getInt("tries") + "," + b.getLong("time");
-        int pos = getPosition(MainActivity.allscores, score);
-        String newScore = score+","+pos;
-        MainActivity.allscores.add(newScore);
-        SharedPreferences.Editor editor = getSharedPreferences("scores", MODE_PRIVATE).edit();
-        editor.clear();
-        editor.commit();
-        for(String s : MainActivity.allscores)
-            editor.putString("top"+pos+b.getString("mode"), newScore);
-        finish();
-
-    }
+        }
     public int  getPosition(ArrayList<String> scores, String score){
         int check = 0;
         ArrayList<String> top = new ArrayList<>();
