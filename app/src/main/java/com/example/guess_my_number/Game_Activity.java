@@ -263,7 +263,8 @@ public class Game_Activity extends AppCompatActivity {
         if(rifGuessView.getText().toString().contains("Nothing") |
                 rifGuessView.getText().toString().contains("Higher") |
                 rifGuessView.getText().toString().contains("Lower") |
-                rifGuessView.getText().toString().contains("Guessed")){
+                rifGuessView.getText().toString().contains("Guessed") |
+                rifGuessView.getText().toString().isEmpty()){
         }else {
             rifGuessView.setText(rifGuessView.getText().toString().substring(0, rifGuessView.getText().toString().length()-1));
            // System.out.println("good: " + rifGuessView.getText().toString());

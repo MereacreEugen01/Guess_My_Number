@@ -3,13 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/ProgettiAndroid/Guess_My_Number/app/src/main/res/layout/activity_game.xml" value="0.5" />
-        <entry key="..\:/ProgettiAndroid/Guess_My_Number/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/ProgettiAndroid/Guess_My_Number/app/src/main/res/layout/activity_score.xml" value="0.3817663817663818" />
-        <entry key="..\:/Users/filip/OneDrive/Desktop/Progetto tecnologie/Guess_My_Number/app/src/main/res/layout/activity_credentials.xml" value="0.264" />
+        <entry key="..\:/ProgettiAndroid/Guess_My_Number/app/src/main/res/drawable/ic_launcher_background.xml" value="0.18504273504273505" />
+        <entry key="..\:/ProgettiAndroid/Guess_My_Number/app/src/main/res/layout/activity_game.xml" value="0.8534798534798534" />
+        <entry key="..\:/ProgettiAndroid/Guess_My_Number/app/src/main/res/layout/activity_main.xml" value="0.20300751879699247" />
+        <entry key="..\:/ProgettiAndroid/Guess_My_Number/app/src/main/res/layout/activity_score.xml" value="0.33" />
+        <entry key="..\:/ProgettiAndroid/Guess_My_Number/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/ProgettiAndroid/Guess_My_Number/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
         <entry key="..\:/Users/filip/OneDrive/Desktop/Progetto tecnologie/Guess_My_Number/app/src/main/res/layout/activity_game.xml" value="0.264" />
         <entry key="..\:/Users/filip/OneDrive/Desktop/Progetto tecnologie/Guess_My_Number/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/filip/OneDrive/Desktop/Progetto tecnologie/Guess_My_Number/app/src/main/res/layout/activity_score.xml" value="0.4" />
+        <entry key="..\:/Users/filip/OneDrive/Desktop/Progetto tecnologie/Guess_My_Number/app/src/main/res/layout/activity_score.xml" value="0.264" />
       </map>
     </option>
   </component>
