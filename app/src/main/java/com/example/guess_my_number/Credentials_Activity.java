@@ -49,7 +49,9 @@ public class Credentials_Activity extends AppCompatActivity {
         for(String s : scores) if(s.split(",")[0].equals(score.split(",")[0])) top.add(s);
         for(check = 0; check < top.size(); check++){
             int tentativi = Integer.parseInt(score.split(",")[2]);
-            if(tentativi <= Integer.parseInt(top.get(check).split(",")[2])){
+            if(tentativi < Integer.parseInt(top.get(check).split(",")[2]))
+                break;
+                if(tentativi == Integer.parseInt(top.get(check).split(",")[2])){
                 double time = Double.parseDouble(score.split(",")[3]);
                 if(time < Double.parseDouble(top.get(check).split(",")[3]))
                     break;

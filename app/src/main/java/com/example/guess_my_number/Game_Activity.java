@@ -70,12 +70,10 @@ public class Game_Activity extends AppCompatActivity {
                             i.putExtra("mode", m);
                             i.putExtra("tries", finalCounter);
                             i.putExtra("time", t);
-                            //invece di getBase metti  long time = SystemClock.elapsedRealtime()-gameTime.getBase();
                             startActivity(i);
                             finish();
                         }
                     }, 1500);
-                // gameTime.
                 if(this.rifGuessView.getText().equals("Guessed")){
 
                 }else{
@@ -83,7 +81,6 @@ public class Game_Activity extends AppCompatActivity {
                 this.rifTriesCounter.setText("" + counter);
                 finalCounter = counter;
                 this.rifGuessView.setText("Guessed");
-
                 }
             }} else if(n > Integer.parseInt(this.rifGuessView.getText().toString())){
                 this.rifGuessView.setText("Higher");
