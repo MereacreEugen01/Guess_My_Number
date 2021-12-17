@@ -34,7 +34,7 @@ public class Credentials_Activity extends AppCompatActivity {
             String score = b.getString("mode") + "," + nome + "," + b.getInt("tries") + "," + b.getLong("time");
             int pos = getPosition(MainActivity.allscores, score);
             String newScore = score + "," + pos;
-            MainActivity.allscores.add(newScore);
+            MainActivity.allscores.add(pos-1, newScore);
             SharedPreferences.Editor editor = getSharedPreferences("scores", MODE_PRIVATE).edit();
             editor.clear();
             editor.commit();
